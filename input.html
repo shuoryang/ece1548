@@ -6,26 +6,19 @@
 </head>
  
 <body>
-<h2>Video Downloader/Audio extractor</h2>
-<form method="get" action="process.php">
-  <fieldset>
-    <legend>Video Download</legend>
-    Video URL: <input type="url" name="source" /><br /><br />
-    Video Format: <input type="radio" name="vformat" value="mp4" checked />mp4
-    <input type="radio" name="vformat" value="mkv" />mkv<br /><br />
-  </fieldset>
-  
-  <fieldset>
-    <legend>Audio Extract</legend>
-    Extract: <input type="radio" name="extract" value="y" checked />YES
-    <input type="radio" name="extract" value="n" />NO<br /><br />
-    Audio Format: <input type="radio" name="aformat" value="m4a" checked />m4a
-    <input type="radio" name="aformat" value="mp3" />mp3<br /><br />
-  </fieldset>
- 
+<div align="center">
 
-  <input type="submit" value="SEND" />
-  <input type="reset" value="CLEAR" />
+<h1><font style="font-family:verdana">You</font><font style="font-family:verdana;color:white;background-color:red">Tube</font> Video Downloader</h1>
+<form method="post" action="validate.jsp">
+	<div align="center">
+		<font style="font-weight:bold">Video URL: </font>
+		<input type="url" name="source" />
+		<input type="reset" value="CLEAR" /><br /><br />
+		<input type="submit" value="VALIDATE" />
+	</div>
+
+ 
+  
 </form>
 
 </body>
