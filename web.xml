@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app version="3.0"
+  xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+ 
+  <!-- To save as <CATALINA_HOME>\webapps\helloservlet\WEB-INF\web.xml -->
+    <listener>
+        <listener-class>php.java.servlet.ContextLoaderListener</listener-class>
+    </listener>
+
+
+    <servlet>
+        <servlet-name>PhpJavaServlet</servlet-name>
+        <servlet-class>php.java.servlet.PhpJavaServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>PhpCGIServlet</servlet-name>
+        <servlet-class>php.java.servlet.PhpCGIServlet</servlet-class>
+        <!-- the following line conveniently adds require_once("java/Java.inc") to each PHP script. You may remove it. -->
+        <init-param><param-name>php_include_java</param-name><param-value>On</param-value></init-param>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+ 
+
+    <!-- Note: All <servlet> elements MUST be grouped together and
+         placed IN FRONT of the <servlet-mapping> elements -->
+ 
+  
+    <servlet-mapping>
+        <servlet-name>PhpJavaServlet</servlet-name>
+        <url-pattern>*.phpjavabridge</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>PhpCGIServlet</servlet-name>
+        <url-pattern>*.php</url-pattern>
+    </servlet-mapping>
+  
+</web-app>
