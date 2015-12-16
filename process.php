@@ -5,6 +5,7 @@ $URL = $_POST["URL"];
 $type = $_POST["type"];
 
 // Check if image file is a actual image or fake image
+echo ("<title>Downloading</title>");
 echo ("<h2 align='center'> Enjoy your Video!<h2>");
 shell_exec("python /usr/local/bin/youtube-dl $URL -f $type --restrict-filenames --prefer-ffmpeg -o 'data/%(title)s-%(resolution)s.%(ext)s'");
 $fileName = shell_exec("python /usr/local/bin/youtube-dl $URL -f $type --restrict-filenames --prefer-ffmpeg -o 'data/%(title)s-%(resolution)s.%(ext)s' --get-filename");
