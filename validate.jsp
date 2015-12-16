@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Echoing HTML Request Parameters</title>
+  <title>Download format selection</title>
 </head>
 <body>
   <%@ page import="java.io.*,java.util.*,java.lang.*" %>
@@ -25,8 +25,9 @@
   p.waitFor();
   if (p.exitValue() != 0 ){
 	  %>
+	  
+	  <div align="center" style="position:fixed; top:20%; left:50%; margin-left:-14em">
 	  <h1 align="center">Invalid URL! please verify and retry...</h1>
-	  <div align="center">
 	  <input type="button" value="Return to URL validation" onclick="location.href='input.html'" />
 	  </div>
   <%
@@ -46,8 +47,9 @@
 	flag3 = 1;
   }
   }%>
-  <h1> Almost ready to go... <h1>
+  <div align="center" style="position:fixed; top:20%; left:50%; margin-left:-14em">
   <form method="post" action="process.php">
+	<h1 align="center"> Almost ready to go... <h1>
 	<font size="3">Select file type to download </font>
 	<select name = "type">
 	  <%if (flag0 == 1){%>
@@ -67,7 +69,7 @@
 	<input type="submit" value="DOWNLOAD" /><br></br>
 	<input type="button" value="CANCEL" onclick="location.href='input.html'" />
 	</form>
-  
+  </div>
     
   	
 
